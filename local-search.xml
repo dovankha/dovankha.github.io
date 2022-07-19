@@ -42,6 +42,8 @@
       
       <category>CTF</category>
       
+      <category>Websec</category>
+      
     </categories>
     
     
@@ -68,6 +70,8 @@
     <categories>
       
       <category>CTF</category>
+      
+      <category>Websec</category>
       
     </categories>
     

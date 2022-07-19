@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>Level4</title>
+    <title>Level 4</title>
     <link href="/2022/07/19/Level4/"/>
     <url>/2022/07/19/Level4/</url>
     
@@ -31,12 +31,18 @@
   
   
   <entry>
-    <title>Level2</title>
+    <title>Level 2</title>
     <link href="/2022/07/19/Level2/"/>
     <url>/2022/07/19/Level2/</url>
     
     <content type="html"><![CDATA[<p><img src="/img/CommingSoon.jpeg"></p>]]></content>
     
+    
+    <categories>
+      
+      <category>CTF</category>
+      
+    </categories>
     
     
     <tags>
@@ -56,7 +62,7 @@
     <link href="/2022/07/19/Level1/"/>
     <url>/2022/07/19/Level1/</url>
     
-    <content type="html"><![CDATA[<p><img src="/img/CommingSoon.jpeg"></p><h2 id="Hi-…"><a href="#Hi-…" class="headerlink" title="Hi …"></a><p style="color:orange">Hi …</p></h2>]]></content>
+    <content type="html"><![CDATA[<p><img src="/img/CommingSoon.jpeg"></p><h2 id="Hi-…"><a href="#Hi-…" class="headerlink" title="Hi …"></a><p style="color:orange">Hi …</p></h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello word&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>

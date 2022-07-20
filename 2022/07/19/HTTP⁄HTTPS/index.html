@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://dovankha.github.io/img/Security/url.png">
 <meta property="og:image" content="https://dovankha.github.io/img/Security/http.png">
 <meta property="article:published_time" content="2022-07-19T02:08:46.115Z">
-<meta property="article:modified_time" content="2022-07-19T15:44:20.686Z">
+<meta property="article:modified_time" content="2022-07-20T01:59:42.123Z">
 <meta property="article:author" content="Khado">
 <meta property="article:tag" content="http">
 <meta name="twitter:card" content="summary_large_image">
@@ -285,25 +285,14 @@
 <p>Dùng port: 443&#x2F;4433</p>
 <p>Dữ liệu chuyển từ Webserver đến trình duyệt không được mã hóa, dễ bị đánh cắp. Giao thức https dùng SSL (secure sockets layer - lớp cổng bảo mật) để mã hóa dữ liệu giữa website và web browser. Hiện tại SSL không còn được sử dụng nữa, chuyển sang TSL (Transport Security Layer), giống như SSL. </p>
 <p><img src="/img/Security/http.png" srcset="/img/loading.gif" lazyload></p>
-<ul>
+<h2 id="HTTP-Status-Code"><a href="#HTTP-Status-Code" class="headerlink" title="HTTP Status Code"></a>HTTP Status Code</h2><ul>
 <li>100-199: Information <em>(100: Continue; 101: Switching protocols)</em>.</li>
 <li>200-299: Successes <em>(200 OK is the “normal” response for a GET; 201: Created; 201: Accepted; 203: Non-authoritative information; 204: No content; 205: Reset content; 206: Partial content)</em></li>
 <li>300-399: Redirects <em>(the information you want is elsewhere’ 301: Moved permanently; 302: Moved temporarily; 304: Not modified)</em></li>
 <li>400-499: Client errors <em>(You did something wrong, like asking for something that doesn’t exist; 403: forbidden; 404: not found; 405: Method not allowed; …)</em></li>
 <li>500-599: Server errors <em>(The server tried, but something went wrong on their side; 500: internal server error; 501: Not implemented; 502: Bad gateway; 505: Gateway timeout)</em></li>
 </ul>
-<p>IP address: có 4 cụm (x.x.x.x), x từ 0 - 255.</p>
-<p>ex: 127.0.0.1, 192.168.80.1</p>
-<p><strong>HTTP Request methods:</strong></p>
-<p><strong>GET</strong>: lấy thông tin từ server đã cung cấp từ url. (Các yêu cầu GET ko ảnh hướng đến dữ liệu).</p>
-<p><strong>HEAD</strong>: tương tự GET, nhưng có thêm trạng thái và khu vực Header.</p>
-<p><strong>POST</strong>: yêu cầu gửi dữ liệu đến server. (vd: thông tin khách hàng, file tải lên, ..), sử dụng các thẻ HTML.</p>
-<p><strong>PUT</strong>: thay đổi tất cả các đại diện của nguồn với nội dung được tải lên.</p>
-<p><strong>DELETE</strong>: gỡ bỏ tất cả các đại diện của nguồn bởi URL.</p>
-<p><strong>CONNECT</strong>: thiết lập một tunnel tới server được xác định bởi URl đã cấp.</p>
-<p><strong>OPTIONS</strong>: miêu tả chức năng giao tiếp cho nguồn mục tiêu.</p>
-<p><strong>TRACE</strong>: trình bày vòng lặp kiểm tra thông báo song song với path tới resource.</p>
-<p><strong>Response Status:</strong></p>
+<p><strong>Vi du</strong></p>
 <ul>
 <li>201 Created – Trả về khi một Resouce vừa được tạo thành công.</li>
 <li>204 No Content – Trả về khi Resource xoá thành công.</li>
@@ -318,6 +307,15 @@
 <li>422 Unprocessable Entity – Dữ liệu không được xác thực</li>
 <li>429 Too Many Requests – Request bị từ chối do bị giới hạn</li>
 </ul>
+<p><strong>HTTP Request methods (HTTP Verb Tampering)</strong></p>
+<p><strong>GET</strong>: lấy thông tin từ server đã cung cấp từ url. (Các yêu cầu GET ko ảnh hướng đến dữ liệu).</p>
+<p><strong>HEAD</strong>: tương tự GET, nhưng có thêm trạng thái và khu vực Header.</p>
+<p><strong>POST</strong>: yêu cầu gửi dữ liệu đến server. (vd: thông tin khách hàng, file tải lên, ..), sử dụng các thẻ HTML.</p>
+<p><strong>PUT</strong>: thay đổi tất cả các đại diện của nguồn với nội dung được tải lên.</p>
+<p><strong>DELETE</strong>: gỡ bỏ tất cả các đại diện của nguồn bởi URL.</p>
+<p><strong>CONNECT</strong>: thiết lập một tunnel tới server được xác định bởi URl đã cấp.</p>
+<p><strong>OPTIONS</strong>: miêu tả chức năng giao tiếp cho nguồn mục tiêu.</p>
+<p><strong>TRACE</strong>: trình bày vòng lặp kiểm tra thông báo song song với path tới resource.</p>
 
                 
               </div>

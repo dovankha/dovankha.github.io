@@ -31,6 +31,93 @@
   
   
   <entry>
+    <title>[WebSec] Level 4</title>
+    <link href="/2022/07/19/Level4/"/>
+    <url>/2022/07/19/Level4/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/img/CommingSoon.jpeg"></p><h2 id="Hi-…"><a href="#Hi-…" class="headerlink" title="Hi …"></a><p style="color:orange">Hi …</p></h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>CTF</category>
+      
+      <category>Websec</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+      <tag>level</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>[WebSec] Level 2</title>
+    <link href="/2022/07/19/Level2/"/>
+    <url>/2022/07/19/Level2/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/img/CommingSoon.jpeg"></p><h2 id="Hi-…"><a href="#Hi-…" class="headerlink" title="Hi …"></a><p style="color:orange">Hi …</p></h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>CTF</category>
+      
+      <category>Websec</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+      <tag>level</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>[WebSec] Level 1</title>
+    <link href="/2022/07/19/Level1/"/>
+    <url>/2022/07/19/Level1/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/img/CommingSoon.jpeg"></p><h2 id="Hi-…"><a href="#Hi-…" class="headerlink" title="Hi …"></a><p style="color:orange">Hi …</p></h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello word&quot;</span>)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>CTF</category>
+      
+      <category>Websec</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+      <tag>level</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>HTTP⁄HTTPS</title>
     <link href="/2022/07/19/HTTP%E2%81%84HTTPS/"/>
     <url>/2022/07/19/HTTP%E2%81%84HTTPS/</url>
@@ -65,7 +152,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<h2 id="Hello-my-friends-I’m-a-student-and-a-pentester"><a href="#Hello-my-friends-I’m-a-student-and-a-pentester" class="headerlink" title="Hello my friends, I’m a student and a pentester"></a><p align="center" style="color:#2ECC71"><strong>Hello my friends, I’m a student and a pentester</strong></p></h2><hr><div style="text-align:center"><img src="https://github.com/dovankha/dovankha.github.io/blob/master/img/avata.jpg?raw=true"/></div><blockquote><p>Email: <a href="mailto:&#x64;&#111;&#118;&#97;&#x6e;&#x6b;&#x68;&#97;&#x2e;&#116;&#108;&#x76;&#x6e;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#x64;&#111;&#118;&#97;&#x6e;&#x6b;&#x68;&#97;&#x2e;&#116;&#108;&#x76;&#x6e;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></p></blockquote><h3 id="Education"><a href="#Education" class="headerlink" title="Education"></a><strong>Education</strong></h3><ul><li>09&#x2F;2019 - Present: Posts and Telecommunications Institute of Technology.</li><li>Major: Information Technology.</li></ul><hr><h3 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a><strong>Experience</strong></h3><ul><li>02&#x2F;2022 - 06&#x2F;2022: Intern in Penetration Testing at <span style="color:#0000FF"><a href="https://www.vietsunshine.com.vn/">VietSunshine</a></span> Company.</li></ul><hr><h3 id="Activities"><a href="#Activities" class="headerlink" title="Activities"></a><strong>Activities</strong></h3><ul><li>Chairman of <span style="color:#0000FF"><a href="https://www.facebook.com/PISClub">PISHCM club</a></span> in 2022-2023.</li><li>Cán bộ Đoàn xuất sắc <span style="color:#0000FF"><a href="https://www.facebook.com/lcdattt">LCĐ An toàn thông tin</a></span> từ 2019 - 2022.</li><li>Đã tham gia lớp cảm tình Đảng năm 2021.</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Hello-my-friends-I’m-a-student-and-a-pentester"><a href="#Hello-my-friends-I’m-a-student-and-a-pentester" class="headerlink" title="Hello my friends, I’m a student and a pentester"></a><p align="center" style="color:#2ECC71"><strong>Hello my friends, I’m a student and a pentester</strong></p></h2><hr><div style="text-align:center"><img src="https://github.com/dovankha/dovankha.github.io/blob/master/img/hinhKha.jpg?raw=true"/></div><blockquote><p>Email: <a href="mailto:&#x64;&#x6f;&#x76;&#x61;&#x6e;&#107;&#x68;&#97;&#46;&#116;&#x6c;&#118;&#110;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#109;">&#x64;&#x6f;&#x76;&#x61;&#x6e;&#107;&#x68;&#97;&#46;&#116;&#x6c;&#118;&#110;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#109;</a></p></blockquote><h3 id="Education"><a href="#Education" class="headerlink" title="Education"></a><strong>Education</strong></h3><ul><li>09&#x2F;2019 - Present: Posts and Telecommunications Institute of Technology.</li><li>Major: Information Technology.</li></ul><hr><h3 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a><strong>Experience</strong></h3><ul><li>02&#x2F;2022 - 06&#x2F;2022: Intern in Penetration Testing at <span style="color:#0000FF"><a href="https://www.vietsunshine.com.vn/">VietSunshine</a></span> Company.</li></ul><hr><h3 id="Activities"><a href="#Activities" class="headerlink" title="Activities"></a><strong>Activities</strong></h3><ul><li>Chairman of <span style="color:#0000FF"><a href="https://www.facebook.com/PISClub">PISHCM club</a></span> in 2022-2023.</li><li>Cán bộ Đoàn xuất sắc <span style="color:#0000FF"><a href="https://www.facebook.com/lcdattt">LCĐ An toàn thông tin</a></span> từ 2019 - 2022.</li><li>Đã tham gia lớp cảm tình Đảng năm 2021.</li></ul>]]></content>
     
   </entry>
   

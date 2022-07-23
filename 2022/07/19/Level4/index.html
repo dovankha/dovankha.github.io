@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image6.png">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image7.png">
 <meta property="article:published_time" content="2022-07-19T14:05:12.000Z">
-<meta property="article:modified_time" content="2022-07-23T02:30:56.315Z">
+<meta property="article:modified_time" content="2022-07-23T02:59:02.681Z">
 <meta property="article:author" content="Khado">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="level">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          1.8k words
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          14 mins
+          15 mins
         
       </span>
     
@@ -344,6 +344,10 @@
 <td align="center"><i>serialize SQL Object</td>
 </tr>
 </tbody></table>
+<p><em>Vì sao phải dùng UNION để select sql mà không select ở vế trước luôn?</em></p>
+<blockquote>
+<p>Vì ta để ý source code 2, trong hàm __destruct() chỉ in ra màn hình $row[‘username’]. Nên bắt buộc trong câu query của mình phải select username.</p>
+</blockquote>
 <p>Copy đoạn base64 thay thế giá trị cookie leet_hax0r, sau đó gửi reuqest:</p>
 <table>
 <thead>

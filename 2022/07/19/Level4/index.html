@@ -25,13 +25,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image1.png">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image2.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/ser_deser.png">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image3.png">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image4.png">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image5.png">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image6.png">
 <meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image7.png">
 <meta property="article:published_time" content="2022-07-19T14:05:12.000Z">
-<meta property="article:modified_time" content="2022-07-20T23:57:16.863Z">
+<meta property="article:modified_time" content="2022-07-23T02:30:56.315Z">
 <meta property="article:author" content="Khado">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="level">
@@ -228,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          1.6k words
         
       </span>
     
@@ -239,7 +240,7 @@
         
         
         
-          10 mins
+          14 mins
         
       </span>
     
@@ -286,7 +287,11 @@
 <p>Với giá trị cookie leet_hax0r: Decode base64 ra thì là một dạng json sau khi <a target="_blank" rel="noopener" href="https://snoopysecurity.github.io/web-application-security/2021/01/08/02_php_object_injection_exploitation-notes.html"><span style="color:#FF4500">serialize</span></a>.</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">a<span class="hljs-punctuation">:</span><span class="hljs-number">1</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span>s<span class="hljs-punctuation">:</span><span class="hljs-number">2</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;ip&quot;</span>;s<span class="hljs-punctuation">:</span><span class="hljs-number">13</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;116.96.78.101&quot;</span>;<span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
 
-<p>Challenge cho 2 source code, nhưng chú ý trong source 1 là viết ở dạng OOP, có các <a target="_blank" rel="noopener" href="https://www.php.net/manual/en/language.oop5.magic.php"><span style="color:#FF4500">Magic Methods</span></a> được dùng như <code>__construct()</code>, <code>__destruct()</code>.</p>
+<p>Các thành phần trên đoạn JSON là một phần của cấu trúc Serialize.</p>
+<p>Cấu trúc của Serialize trong PHP có dạng <code>data-type:data</code>.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs txt">BOOLEAN<br>b:value (value chỉ có giá trị 1 hoặc 0. 1 là đúng, 0 là sai).<br><br>STRING<br>s:size:value (s:5:&quot;12345&quot;)<br><br>INTEGER<br>i:value<br><br>NULL<br>N;<br><br>ARRAY<br>a:size:&#123;key:value; (lặp lại key:value đến khi bằng size))&#125;<br><br>OBJECT<br>O:length_object_name:object_name:object_size:&#123;&lt;property&gt;:&lt;value&gt;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Challenge cho 2 source code, nhưng chú ý trong source 1 là viết ở dạng OOP, có các <a target="_blank" rel="noopener" href="https://www.php.net/manual/en/language.oop5.magic.php"><span style="color:#FF4500">Magic Functions</span></a> được dùng như <code>__construct()</code>, <code>__destruct()</code>.</p>
 <ul>
 <li><p><code>__construct()</code>: hàm này được gọi khi khởi tạo một đối tượng.</p>
 </li>
@@ -311,6 +316,17 @@
 </thead>
 <tbody><tr>
 <td align="center"><i>Source code 2</td>
+</tr>
+</tbody></table>
+<p>Quá trình serialize và deserialize diễn ra như hình bên dưới:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="/img/CTF/WebSec/lv4/ser_deser.png" srcset="/img/loading.gif" lazyload></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><i>Serialize &amp; Deserialize</td>
 </tr>
 </tbody></table>
 <h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a><strong>Exploit</strong></h3><p>Để ý dòng code ở source 2. Thì giá trị cookie leet_hax0r được encode base64.</p>

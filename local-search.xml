@@ -26,6 +26,8 @@
       
       <tag>easy</tag>
       
+      <tag>uploadFile</tag>
+      
     </tags>
     
   </entry>
@@ -54,6 +56,8 @@
       <tag>ctf</tag>
       
       <tag>easy</tag>
+      
+      <tag>sqli</tag>
       
     </tags>
     
@@ -113,6 +117,8 @@
       
       <tag>babysteps</tag>
       
+      <tag>parameter</tag>
+      
     </tags>
     
   </entry>
@@ -141,6 +147,8 @@
       <tag>ctf</tag>
       
       <tag>babysteps</tag>
+      
+      <tag>TypeJugling</tag>
       
     </tags>
     
@@ -198,6 +206,8 @@
       
       <tag>babysteps</tag>
       
+      <tag>unserialize</tag>
+      
     </tags>
     
   </entry>
@@ -226,6 +236,8 @@
       <tag>ctf</tag>
       
       <tag>babysteps</tag>
+      
+      <tag>sqli</tag>
       
     </tags>
     

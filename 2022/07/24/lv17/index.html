@@ -16,28 +16,29 @@
   <meta name="author" content="Khado">
   <meta name="keywords" content="">
   
-    <meta name="description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level01&#x2F;index.php  Information GatheringSau khi nhìn sơ qua bối cảnh challenge, thì có 1 chỗ input là số để xem thông tin ID.Và challenge cũng đã cho source sẵn: 1234567891011121314">
+    <meta name="description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level17&#x2F;index.php   Information GatheringNhư thường lệ, bước đầu tiên chúng ta ngó xem qua phần giao diện, có chỗ input và button Submit. Nó yêu cầu mình đoán flag, nên thử nhập đại">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[WebSec] Level 1">
-<meta property="og:url" content="https://dovankha.github.io/2022/07/19/Level1/index.html">
+<meta property="og:title" content="[WebSec] Level 17">
+<meta property="og:url" content="https://dovankha.github.io/2022/07/24/lv17/index.html">
 <meta property="og:site_name" content="Khado">
-<meta property="og:description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level01&#x2F;index.php  Information GatheringSau khi nhìn sơ qua bối cảnh challenge, thì có 1 chỗ input là số để xem thông tin ID.Và challenge cũng đã cho source sẵn: 1234567891011121314">
+<meta property="og:description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level17&#x2F;index.php   Information GatheringNhư thường lệ, bước đầu tiên chúng ta ngó xem qua phần giao diện, có chỗ input và button Submit. Nó yêu cầu mình đoán flag, nên thử nhập đại">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv1/image1.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv1/image2.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv1/image3.png">
-<meta property="article:published_time" content="2022-07-19T13:45:45.000Z">
-<meta property="article:modified_time" content="2022-08-16T14:58:30.505Z">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv17/loose-comparison.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv17/strict-comparison.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv17/debug1.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv17/kq.png">
+<meta property="article:published_time" content="2022-07-24T14:05:06.000Z">
+<meta property="article:modified_time" content="2022-08-16T14:59:21.784Z">
 <meta property="article:author" content="Khado">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="babysteps">
-<meta property="article:tag" content="sqli">
+<meta property="article:tag" content="TypeJugling">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv1/image1.png">
+<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv17/loose-comparison.png">
   
   
   
-  <title>[WebSec] Level 1 - Khado</title>
+  <title>[WebSec] Level 17 - Khado</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="[WebSec] Level 1"></span>
+            <span id="subtitle" data-typed-text="[WebSec] Level 17"></span>
           
         </div>
 
@@ -213,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-19 20:45" pubdate>
-          July 19, 2022 pm
+        <time datetime="2022-07-24 21:05" pubdate>
+          July 24, 2022 pm
         </time>
       </span>
     
@@ -225,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          2.4k words
         
       </span>
     
@@ -236,7 +237,7 @@
         
         
         
-          11 mins
+          20 mins
         
       </span>
     
@@ -274,39 +275,55 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">[WebSec] Level 1</h1>
+            <h1 style="display: none">[WebSec] Level 17</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://websec.fr/level01/index.php">https://websec.fr/level01/index.php</a></p>
+<p><a target="_blank" rel="noopener" href="https://websec.fr/level17/index.php">https://websec.fr/level17/index.php</a></p>
 </blockquote>
-<h3 id="Information-Gathering"><a href="#Information-Gathering" class="headerlink" title="Information Gathering"></a><strong>Information Gathering</strong></h3><p>Sau khi nhìn sơ qua bối cảnh challenge, thì có 1 chỗ input là số để xem thông tin ID.<br>Và challenge cũng đã cho source sẵn:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LevelOne</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doQuery</span>(<span class="hljs-params"><span class="hljs-variable">$injection</span></span>) </span>&#123;<br>        <span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SQLite3</span>(<span class="hljs-string">&#x27;database.db&#x27;</span>, SQLITE3_OPEN_READONLY);<br>        <br>        <span class="hljs-variable">$query</span> = <span class="hljs-string">&#x27;SELECT id,username FROM users WHERE id=&#x27;</span> . <span class="hljs-variable">$injection</span> . <span class="hljs-string">&#x27; LIMIT 1&#x27;</span>;<br>        <span class="hljs-variable">$getUsers</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">query</span>(<span class="hljs-variable">$query</span>);<br>        <span class="hljs-variable">$users</span> = <span class="hljs-variable">$getUsers</span>-&gt;<span class="hljs-title function_ invoke__">fetchArray</span>(SQLITE3_ASSOC);<br><br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$users</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable">$users</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr>
+<h3 id="Information-Gathering"><a href="#Information-Gathering" class="headerlink" title="Information Gathering"></a><strong>Information Gathering</strong></h3><p>Như thường lệ, bước đầu tiên chúng ta ngó xem qua phần giao diện, có chỗ input và button Submit.</p>
+<p>Nó yêu cầu mình đoán flag, nên thử nhập đại gì đó, và xem response trả về thế nào. Không có gì đáng chú ý hơn link tới source code.</p>
+<p>Challenge cho sẵn luôn source code, chúng qua và để ý đến 2 phần code PHP.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">include</span> <span class="hljs-string">&quot;flag.php&quot;</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sleep_rand</span>(<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">/* I wish php5 had random_int() */</span><br>        <span class="hljs-variable">$range</span> = <span class="hljs-number">100000</span>;<br>        <span class="hljs-variable">$bytes</span> = (<span class="hljs-keyword">int</span>) (<span class="hljs-title function_ invoke__">log</span>(<span class="hljs-variable">$range</span>, <span class="hljs-number">2</span>) / <span class="hljs-number">8</span>) + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">do</span> &#123;  <span class="hljs-comment">/* Side effect: more random cpu cycles wasted ;) */</span><br>            <span class="hljs-variable">$rnd</span> = <span class="hljs-title function_ invoke__">hexdec</span>(<span class="hljs-title function_ invoke__">bin2hex</span>(<span class="hljs-title function_ invoke__">openssl_random_pseudo_bytes</span>(<span class="hljs-variable">$bytes</span>)));<br>        &#125; <span class="hljs-keyword">while</span> (<span class="hljs-variable">$rnd</span> &gt;= <span class="hljs-variable">$range</span>);<br>        <span class="hljs-title function_ invoke__">usleep</span>(<span class="hljs-variable">$rnd</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>Với đoạn code trên, tại dòng 5. Nếu như mình truyền vào là dấu ‘, chữ cái, kí tự đặc biệt thì sẽ báo lỗi.</p>
-<p><img src="/img/CTF/WebSec/lv1/image1.png" srcset="/img/loading.gif" lazyload alt="Lỗi khi nhập chữ a"></p>
-<p>Với source code và thông báo lỗi, mình xác định được đây là lỗi SQL injection trên SQLite3.</p>
-<h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a><strong>Exploit</strong></h3><p>Vì ID kiểu dữ liệu thường là số, nên mình sẽ dùng kỹ thuật khai thác là <a target="_blank" rel="noopener" href="https://sechow.com/bricks/docs/content-page-1.html">UNION</a>.</p>
+<p>Đoạn code trên chỉ là hàm để delay trong quá trình thực thi chương trình. Khi nào gọi lại hàm <code>sleep_rand()</code> thì đoạn xử lí đó sẽ delay.</p>
+<p>Thời gian delay lâu hay mau phụ thuộc vào hàm random ở dòng 8. Hàm <code>openssl_random_pseudo_bytes()</code> sẽ tạo ra random string pseudo_bytes từ param $bytes ở dạng binary.</p>
+<p>Sau đó hàm <code>bin2hex()</code> sẽ convert binary sang dạng hex. Tiếp theo hàm <code>hexdec()</code> sẽ convert hex sang dạng decemal.</p>
+<p>Đại khái là hàm trên cũng không ảnh hương tới challenge nhiều, vì hàm <code>usleep()</code> sẽ delay chương trình với param là <strong>micro second</strong>. Ví dụ <code>usleep(2000000)</code> thì sẽ delay 2s.</p>
+<hr>
+<p>Tiếp đến source code còn lại:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-keyword">if</span> (! <span class="hljs-title function_ invoke__">strcasecmp</span> (<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;flag&#x27;</span>], <span class="hljs-variable">$flag</span>))<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;div class=&quot;alert alert-success&quot;&gt;Here is your flag: &lt;mark&gt;&#x27;</span> . <span class="hljs-variable">$flag</span> . <span class="hljs-string">&#x27;&lt;/mark&gt;.&lt;/div&gt;&#x27;</span>;   <br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;div class=&quot;alert alert-danger&quot;&gt;Invalid flag, sorry.&lt;/div&gt;&#x27;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>Quan sát thấy thì đoạn code phía trên sẽ so sánh giá trị của <code>flag</code> khi input từ user vào và giá trị <code>$flag</code> đã assign trong chương trình. </p>
+<p>Nhưng để so sánh thì dùng hàm <code>strcasecmp()</code>, điều đáng nói hơn ở đây là dấu chấm thang ở phía trước hàm.</p>
+<blockquote>
+<p>Hàm <code>strcasecmp($str1, $str2)</code> sẽ nhận vào 2 string để so sánh. Kết quả trả về là:</p>
 <ul>
-<li>Kiểm tra số cột được select.</li>
+<li>&gt; 0: Nếu như $str1 &gt; $str2.</li>
+<li>&lt; 0: Nếu như $str1 &lt; $str2.</li>
+<li>&#x3D; 0: Nếu như $str1 &#x3D; $str2.</li>
 </ul>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs txt">1 order by 2 ==&gt; OK<br>1 order by 3 ==&gt; ERROR<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>Dấu chấm thang ở phía trước có nghĩa là <code>$str1</code> và <code>$str2</code> bằng nhau.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">if</span> (! <span class="hljs-title function_ invoke__">strcasecmp</span> (<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;flag&#x27;</span>], <span class="hljs-variable">$flag</span>))<br><span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">strcasecpm</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;flag&#x27;</span>], <span class="hljs-variable">$flag</span>) == <span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
 
-<p>Vậy là có 2 cột được select.</p>
-<p>Tiếp theo cần xem các cột đó là gì.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span><span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">sql</span>,<span class="hljs-number">2</span> <span class="hljs-keyword">from</span> sqlite_master<br><span class="hljs-operator">/</span><span class="hljs-operator">/</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> users(id <span class="hljs-type">int</span>(<span class="hljs-number">7</span>), username <span class="hljs-type">varchar</span>(<span class="hljs-number">255</span>), password <span class="hljs-type">varchar</span>(<span class="hljs-number">255</span>))<br></code></pre></td></tr></table></figure>
-
-<p><img src="/img/CTF/WebSec/lv1/image2.png" srcset="/img/loading.gif" lazyload alt="Query được dùng"></p>
-<p>Xác định được table là <code>users</code> và các cột là <code>id, username, password</code>.</p>
-<p>Tìm xem còn table nào ngoài users hay không?</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span><span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> group_concat(tbl_name),<span class="hljs-number">2</span> <span class="hljs-keyword">from</span> sqlite_master <span class="hljs-keyword">where</span> type<span class="hljs-operator">=</span><span class="hljs-string">&#x27;table&#x27;</span> <span class="hljs-keyword">and</span> tbl_name <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;sqlite_%&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<p>Cuối cùng get flag thôi.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span><span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> password <span class="hljs-keyword">from</span> users <span class="hljs-keyword">where</span> username<span class="hljs-operator">=</span>&quot;flag&quot;<br></code></pre></td></tr></table></figure>
-
-<p><img src="/img/CTF/WebSec/lv1/image3.png" srcset="/img/loading.gif" lazyload alt="Flag"></p>
+<p>Hai dòng code trên là tương tự nhau về mặt chức năng và bản chất.</p>
+<p>Khi so sánh <code>==</code> thì lại để ý tới lỗi <a target="_blank" rel="noopener" href="https://www.invicti.com/blog/web-security/php-type-juggling-vulnerabilities/">Type Jugling</a> và tham khảo hai hình bên dưới.</p>
+<p><img src="/img/CTF/WebSec/lv17/loose-comparison.png" srcset="/img/loading.gif" lazyload alt="Loose"></p>
+<p><img src="/img/CTF/WebSec/lv17/strict-comparison.png" srcset="/img/loading.gif" lazyload alt="Strict"><br>&#96;</p>
+<hr>
+<h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a><strong>Exploit</strong></h3><p>Khi mà so sánh trong hàm <code>strcasecpm()</code> sẽ cho ra kết quả là <code>False</code>. Tiếp theo <code>False</code> so với <code>0</code> thì sẽ là <code>True</code>.</p>
+<p><img src="/img/CTF/WebSec/lv17/debug1.png" srcset="/img/loading.gif" lazyload alt="Debug compare"></p>
+<p>Từ đó, sẽ tìm ra được flag.</p>
+<blockquote>
+<p>Payload: <strong>flag[]&#x3D;1</strong></p>
+</blockquote>
+<p>Kết quả:</p>
+<p><img src="/img/CTF/WebSec/lv17/kq.png" srcset="/img/loading.gif" lazyload alt="KetQua"></p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a><strong>References</strong></h3><p><a target="_blank" rel="noopener" href="https://techgeekgalaxy.com/php-equality-comparisons/#:~:text=or%20security%20exploits.-,Strict%20Comparison%20(%3D%3D%3D),types%20then%20false%20is%20returned.">https://techgeekgalaxy.com/php-equality-comparisons/#:~:text=or%20security%20exploits.-,Strict%20Comparison%20(%3D%3D%3D),types%20then%20false%20is%20returned.</a></p>
+<p><a target="_blank" rel="noopener" href="https://danuxx.blogspot.com/2013/03/unauthorized-access-bypassing-php-strcmp.html">https://danuxx.blogspot.com/2013/03/unauthorized-access-bypassing-php-strcmp.html</a></p>
 
                 
               </div>
@@ -351,7 +368,7 @@
       
         <a href="/tags/babysteps/">#babysteps</a>
       
-        <a href="/tags/sqli/">#sqli</a>
+        <a href="/tags/TypeJugling/">#TypeJugling</a>
       
     </div>
   
@@ -363,8 +380,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>[WebSec] Level 1</div>
-      <div>https://dovankha.github.io/2022/07/19/Level1/</div>
+      <div>[WebSec] Level 17</div>
+      <div>https://dovankha.github.io/2022/07/24/lv17/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +393,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 19, 2022</div>
+          <div>July 24, 2022</div>
         </div>
       
       
@@ -412,9 +429,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/19/Level4/" title="[WebSec] Level 4">
+                      <a href="/2022/07/30/lv25/" title="[WebSec] Level 25">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">[WebSec] Level 4</span>
+                        <span class="hidden-mobile">[WebSec] Level 25</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -422,8 +439,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/19/HTTP%E2%81%84HTTPS/" title="HTTP⁄HTTPS">
-                        <span class="hidden-mobile">HTTP⁄HTTPS</span>
+                      <a href="/2022/07/20/PwnFox/" title="PwnFox Extension on Firefox for Pentester">
+                        <span class="hidden-mobile">PwnFox Extension on Firefox for Pentester</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

